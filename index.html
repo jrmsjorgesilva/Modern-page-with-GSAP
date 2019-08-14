@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/" class="logo">Musician Name</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <section class="hero">
+            <div class="inner">
+                <div class="clipper">
+                    <h1>Go Musician</h1>
+                </div>
+                <div class="anim-panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quo ut ad.</p>
+                    <a href="/" class='read-btn primary'>Get Famous</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sidebar">
+            <div class="inner">
+                <div class="clipper">
+                    <h2>Featured</h2>
+                </div>
+                <div class="anim-panel">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti mollitia molestias deserunt, quis eos porro maxime consequatur illum tenetur nobis qui ad distinctio explicabo aliquam tempore soluta repellat ducimus reprehenderit rerum velit. Hic, itaque!</p>
+                    <a href="/" class="read-btn">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="subscribe">
+            <div class="inner">
+                <div class="clipper">
+                    <h2>Subscribe</h2>
+                </div>
+                <div class="anim-panel">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nostrum nisi porro?</p>
+                    <input type="text" name='email' placeholder='Email Address'>
+                    <button class="cta">Subscribe Now</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script 
+        src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'>
+    </script>
+
+    <script>
+    
+        document.addEventListener('DOMContentLoaded', event => {
+
+            window.addEventListener('load', e => {
+
+                document.body.style.display = 'block';
+
+                let tl = new TimelineMax();
+
+                tl.staggerFrom('section', 2, {
+                    opacity: 0,
+                    scale: .5,
+                    ease: Power2.easeOut
+                }, .2);
+
+                tl.staggerFrom('h1, h2', .5, {
+                    opacity: 0,
+                    y: -40,
+                    ease: Power2.easeInOut,
+                }, .2, '-=2');
+
+                tl.staggerFrom('.anim-panel', 1, {
+                    opacity: 0,
+                    y: -40,
+                    ease: Power2.easeInOut,
+                }, .2, '-=1.5');
+
+            });
+        });
+    
+    </script>
+    
+</body>
+</html>
